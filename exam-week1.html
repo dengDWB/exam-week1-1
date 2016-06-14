@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>MarkdownPad Document</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h1>考核测试（第一周）</h1>
+<h2>试前说明</h2>
+<ul>
+<li>收到考核邮件及做完试题后请分别回复邮件。（交卷时附上 github 项目链接）</li>
+<li>每道试题做完后请提交信息至 github 账号本次考核项目。</li>
+<li>顺序做题。</li>
+<li>考核时间: 13:00 - 18:00。</li>
+<li>试卷会在 12:30 左右通过邮件发出，13:00 前有疑惑请在微信里及时交流。</li>
+</ul>
+<h2>github 提交约束</h2>
+<ul>
+<li>提交信息以增加（add）、优化（optimized）、修正（fixed)开头。（冒号空格，然后是提交信息）</li>
+<li><code>git commit</code> 提交内容,请勿擅写。</li>
+<li>允许重复提交。（例如提交第一题后，发现有 bug 或更好的实现方式，可以提交修正或优化）</li>
+<li>所有 git 操作请使用命令行。</li>
+</ul>
+<h2>评分规则</h2>
+<ul>
+<li>百分制，六十分合格。</li>
+<li>乱序做题，不合格。</li>
+<li>逾期交卷，不合格。</li>
+<li>github 提交乱写，不合格。</li>
+<li>代码整洁度占 10%。</li>
+<li>平时表现占附加分 10分。（合格者忽略此项）</li>
+</ul>
+<h2>试题</h2>
+<h2>github（5 分）</h2>
+<ol>
+<li>创建项目，项目名称: exam-week1-1。</li>
+<li>包含 README.md、.gitignore, license 选择 GPL。</li>
+<li>同步至本地。</li>
+</ol>
+<p><em>说明:后面试题均在此项目文件夹下完成</em></p>
+<h3>markdown（25 分）</h3>
+<ol>
+<li><strong>本次考核试卷</strong>翻译为对应的 html 格式，写入文件: exam-week1.html。</li>
+<li>github 提交。（add: markdown 翻译为 html）</li>
+</ol>
+<h3>javascript（10 分）</h3>
+<ol>
+<li>创建文件: javascript.html，界面上两个输入框、一个按钮，水平对齐。（样式可忽略）</li>
+<li>功能: 第一个输入框写任何内容，点击按钮，则第二个输入框显示第一个输入框内容，第一个输入框内容清空。</li>
+<li>github 提交。（add: javascript 输入框内容传递）</li>
+</ol>
+<h3>视图生命周期（5 分）</h3>
+<ol>
+<li>创建文件: view-life-recycle.md。</li>
+<li>android/ios 视图生命周期列表，及您的理解使用 markdown 表达出来。</li>
+<li>github提交。（add: 视图生命周期及理解）</li>
+</ol>
+<h3>沙盒文件结构（5 分）</h3>
+<ol>
+<li>创建文件: sandbox-file-structure.md。</li>
+<li>android/ios 沙盒文件结构，及您的理解使用 markdown 表达出来。</li>
+<li>github 提交。（add: 沙盒文件结构及理解）</li>
+</ol>
+<h3>javascript &amp; native 交互（25 分）</h3>
+<ul>
+<li>创建 android/ios 项目，名称: js-with-native。</li>
+<li>拷贝 javascript.html 文件至项目中。</li>
+<li>视图<strong>将要显示前</strong>，判断沙盒中是否存在 javascritp.html 文件，若不存在，则从项目 assets 文件夹下拷贝。</li>
+<li>使用 webview 加载沙盒中 javascript.html 文件。</li>
+<li>点击 html 界面中按钮时，输入框内容传递给 native, 并以弹出框显示。（当前输入框内容为空时，显示’请输入内容’）</li>
+<li>
+<p>github 提交。（add: javascript &amp; native 交互）</p>
+</li>
+<li>
+<p>模拟器界面截图，保存至: exam-week1-1/images/android-javascript-native.png。(图片格式不限)</p>
+</li>
+<li>更新说明文档 exam-week1-1/README.md, 显示上述截图。</li>
+<li>github 提交。（add: javascript &amp; native 交互，模拟器界面截图）</li>
+</ul>
+<h3>pdf展示 （15 分）（仅 anroid）</h3>
+<p><em>说明: 继续在 js-with-native 项目中进行。</em></p>
+<ul>
+<li>将<a href="http://123.59.75.85:8080/yhportal/appClientReport/nationalSalesBrief.pdf">链接中pdf文件</a>保存至项目中。</li>
+<li>当 html 界面中第一个输入框内容包含'pdf'时，android弹出框显示输入框内容, 点击[确定]，则跳转至新视图，展示 pdf 文件。</li>
+<li>
+<p>github 提交。（add: pdf 展示）</p>
+</li>
+<li>
+<p>模拟器界面截图，保存至: exam-week1-1/images/android-sandbox-pdf.png。(图片格式不限)</p>
+</li>
+<li>更新说明文档 exam-week1-1/README.md, 显示上述截图。</li>
+<li>github 提交。（add: pdf 展示，模拟器界面截图）</li>
+</ul>
+<h3>视图跳转（15 分）（仅 ios）</h3>
+<ul>
+<li>当html界面中第一个输入框内容以 http[s]:// 开头时，ios弹出框显示输入框内容，点击[确定]，则弹出新视图使用 webview 加载链接。（html 界面中第一个输入框内容）</li>
+<li>
+<p>github 提交。（add: 视图跳转）</p>
+</li>
+<li>
+<p>模拟器 webview 界面截图，保存至: exam-week1-1/images/ios-webview.png。(图片格式不限)</p>
+</li>
+<li>更新说明文档 exam-week1-1/README.md, 显示上述截图。</li>
+<li>github 提交。（add: 视图跳转，模拟器界面截图）</li>
+</ul>
+<h3>综合 （10 分）</h3>
+<ul>
+<li>github 项目设置。</li>
+<li><code>git commit</code> 信息格式。</li>
+<li>文件（夹）名称格式。</li>
+<li>README.md 清空无用信息，更新内容时，使用有序列表样式。</li>
+</ul>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
