@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity implements OnPageChangeListe
                     Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT);
                     StringBuffer sb= new StringBuffer(str);
                     if (sb.indexOf("pdf")!=-1){
-                        Intent intent = new Intent(MainActivity.this,Activity.class);
+                        Intent intent = new Intent(MainActivity.this,ShowPdfActivity.class);
                         startActivity(intent);
                     }
                         dialog.dismiss();
