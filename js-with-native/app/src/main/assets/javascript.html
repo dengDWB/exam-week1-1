@@ -1,0 +1,29 @@
+<html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+	<script type="text/javascript">
+		function showContent(){
+			window.JsInterface.showDialog(document.getElementById("enter").value);
+			var str = document.getElementById("enter").value;
+			document.getElementById("enter").value="";
+			document.getElementById("display").value=str;
+		}
+	</script>
+	<style type="text/css">
+	
+	</style>
+</head>
+	<body align="center">
+	
+		输入:
+		<input type="text" id="enter" name="enter">
+		显示:
+		<input type="text" id="display">
+		
+		<input type="button" onclick="showContent();" value="确定">
+
+	</body>
+
+</html>
