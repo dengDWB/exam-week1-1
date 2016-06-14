@@ -3,7 +3,9 @@ package activity.dengwenbin.com.js_with_native;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.AssetManager;
+import android.graphics.Canvas;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.webkit.JavascriptInterface;
@@ -11,12 +13,17 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.Toast;
 
+import com.joanzapata.pdfview.listener.OnDrawListener;
+import com.joanzapata.pdfview.listener.OnLoadCompleteListener;
+import com.joanzapata.pdfview.listener.OnPageChangeListener;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements OnPageChangeListener
+        , OnLoadCompleteListener, OnDrawListener {
 
     private AssetManager assetManager;
     private InputStream inputStream;
@@ -70,6 +77,21 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onLayerDrawn(Canvas canvas, float pageWidth, float pageHeight, int displayedPage) {
+
+    }
+
+    @Override
+    public void loadComplete(int nbPages) {
+
+    }
+
+    @Override
+    public void onPageChanged(int page, int pageCount) {
+
+    }
+
     public class JsInterface{
         @JavascriptInterface
         public void showDialog(final String str){
@@ -85,7 +107,12 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     Toast.makeText(MainActivity.this, str, Toast.LENGTH_SHORT);
-                    dialog.dismiss();
+                    StringBuffer sb= new StringBuffer(str);
+                    if (sb.indexOf("pdf")!=-1){
+                        Intent intent = new Intent(MainActivity.this,Activity.class);
+                        startActivity(intent);
+                    }
+                        dialog.dismiss();
                 }
             });
             AlertDialog dialog = builder.create();
